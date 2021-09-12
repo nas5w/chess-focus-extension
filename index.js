@@ -50,6 +50,6 @@ chrome.runtime.onMessage.addListener(function (request, _, sendResponse) {
 // Provide game info if popup asks for it
 chrome.runtime.onMessage.addListener((msg, _, response) => {
   if (msg.from === "popup" && msg.subject === "DOMInfo") {
-    response({ games: getGames() });
+    response({ games: JSON.stringify(getGames()) });
   }
 });

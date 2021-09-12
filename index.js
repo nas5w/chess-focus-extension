@@ -2,11 +2,13 @@ console.log("Lichess focus extension loaded");
 
 const LOCAL_STORAGE_KEY = "focus_games";
 
+const ALL_TYPES = ["Blitz", "Bullet", "Rapid", "Classical"];
+
 function getGames() {
   try {
-    return JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    return JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || ALL_TYPES;
   } catch (e) {
-    return ["Blitz", "Bullet", "Rapid", "Classical"];
+    return ALL_TYPES;
   }
 }
 

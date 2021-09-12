@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+
+  "name": "Chess Focus",
+  "version": "0.1.0",
+  "description": "Hide parts of Lichess",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "js": ["index.js", "popup.js"],
+      "matches": ["https://lichess.org/"]
+    }
+  ]
+}
